@@ -5,7 +5,9 @@ export function startBot(version: string) {
 		console.log("Creating bot");
 		const bot = Mineflayer.createBot({
 			auth: "microsoft",
+			hideErrors: false,
 			host: "mc.hypixel.net",
+			logErrors: true,
 			port: 25565,
 			username: "username",
 			version: version,
