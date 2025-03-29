@@ -1,0 +1,31 @@
+{
+	"name": "mineflayer-bug",
+	"version": "1.0.0",
+	"description": "Demo for Mineflayer bug",
+	"author": "PseudoResonance",
+	"main": "./src/index.ts",
+	"private": true,
+	"scripts": {
+		"dev": "bun run ./src/index.ts",
+		"build": "bun build ./src/index.ts"
+	},
+	"exports": {
+		"@": "./src/"
+	},
+	"dependencies": {
+		"mineflayer": "^4.0.0"
+	},
+	"devDependencies": {
+		"@eslint/eslintrc": "^3.3.0",
+		"@eslint/js": "^9.23.0",
+		"@types/bun": "^1.2.4",
+		"@typescript-eslint/parser": "^8.25.0",
+		"eslint": "^9.21.0",
+		"eslint-config-prettier": "^10.0.2",
+		"eslint-plugin-perfectionist": "^4.10.1",
+		"eslint-plugin-prettier": "^5.2.5",
+		"prettier": "^3.5.3",
+		"typescript": "^5.8.2",
+		"typescript-eslint": "^8.28.0"
+	}
+}

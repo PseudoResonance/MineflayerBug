@@ -1,0 +1,40 @@
+// See https://containers.dev/implementors/json_reference/ for configuration reference
+{
+	"name": "Mineflayer Bug Demo",
+	"build": {
+		"dockerfile": "Dockerfile",
+		"args": {
+			"REMOTE_USER": "${localEnv:USER}",
+			"REMOTE_UID": "${localEnv:REMOTE_UID:1000}",
+			"REMOTE_GID": "${localEnv:REMOTE_GID:1000}"
+		}
+	},
+	"remoteUser": "${localEnv:USER}",
+	"features": {
+		"ghcr.io/cirolosapio/devcontainers-features/alpine-docker-outside-of-docker:0": {
+			"installDockerCompose": true
+		}
+	},
+	"runArgs": ["--network=host"],
+	// Configure tool-specific properties.
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-azuretools.vscode-docker",
+				"dbaeumer.vscode-eslint",
+				"christian-kohler.npm-intellisense",
+				"esbenp.prettier-vscode",
+				"oven.bun-vscode"
+			]
+		}
+	},
+	"containerEnv": {
+		"ENV": "/etc/profile"
+	},
+	"mounts": [
+		"source=/home/${localEnv:USER}/.config,target=/home/${localEnv:USER}/.config,type=bind",
+		"source=mineflayer-bug-history,target=/shellhistory,type=volume"
+	],
+	"workspaceMount": "source=${localWorkspaceFolder},target=/opt,type=bind",
+	"workspaceFolder": "/opt"
+}
